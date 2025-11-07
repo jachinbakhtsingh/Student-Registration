@@ -1,19 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration System</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>Student Registration</h1>
-    </header>
-    <section>
-        <div class="container">
-            <textarea name="text" id="textarea"></textarea>
-            <button type="button" class="buttoninput"></button>
-        </div>
-    </section>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-6">
+
+  <header class="text-center mb-6">
+    <h1 class="text-3xl font-bold text-blue-600">Student Registration System</h1>
+    <p class="text-gray-600 mt-2">Add, edit, and manage student records easily.</p>
+  </header>
+
+  <!-- Registration Form -->
+  <section class="bg-white p-6 rounded-lg shadow-md w-full max-w-lg mb-8">
+    <h2 class="text-xl font-semibold mb-4 text-gray-700">Register Student</h2>
+    <form id="studentForm" class="space-y-4">
+      <input type="text" id="name" placeholder="Student Name" class="w-full border p-2 rounded" required>
+      <input type="number" id="studentId" placeholder="Student ID" class="w-full border p-2 rounded" required>
+      <input type="email" id="email" placeholder="Email ID" class="w-full border p-2 rounded" required>
+      <input type="tel" id="contact" placeholder="Contact Number" class="w-full border p-2 rounded" required>
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Add Student</button>
+    </form>
+  </section>
+
+  <!-- Display Section -->
+  <section class="bg-white p-6 rounded-lg shadow-md w-full max-w-4xl overflow-y-auto max-h-[400px]" id="displaySection">
+    <h2 class="text-xl font-semibold mb-4 text-gray-700">Registered Students</h2>
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-blue-100">
+          <th class="p-2">Name</th>
+          <th class="p-2">Student ID</th>
+          <th class="p-2">Email</th>
+          <th class="p-2">Contact</th>
+          <th class="p-2 text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="studentTable"></tbody>
+    </table>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>

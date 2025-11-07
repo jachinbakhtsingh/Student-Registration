@@ -1,0 +1,9 @@
+/* Extra small adjustments if needed */
+@media (max-width: 640px) {
+  #studentForm {
+    padding: 1rem;
+  }
+  table th, table td {
+    font-size: 0.9rem;
+  }
+}
